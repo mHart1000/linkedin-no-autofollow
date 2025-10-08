@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn No Auto-Follow",
+  "version": "1.0",
+  "description": "Automatically unchecks the 'Follow company' checkbox in LinkedIn Easy Apply forms.",
+  "content_scripts": [
+    {
+      "matches": ["*://www.linkedin.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["scripting", "activeTab"],
+  "icons": {
+    "48": "icon48.png"
+  }
+}
