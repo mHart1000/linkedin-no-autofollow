@@ -1,8 +1,17 @@
+let enabled = true
+
+browser.storage.local.get('enabled').then(result => {
+  if (result.enabled === false) {
+    enabled = false
+  }
+})
+
 function uncheckFollowBox() {
+  if (!enabled) return
+
   const checkbox = document.querySelector('#follow-company-checkbox')
   if (!checkbox) return
 
-  // Give it a tiny delay to allow LinkedIn scripts to bind or re-render
   setTimeout(() => {
     if (checkbox.checked) {
       checkbox.checked = false
@@ -12,10 +21,9 @@ function uncheckFollowBox() {
   }, 250)
 }
 
-// Run once on load
 uncheckFollowBox()
 
-// Watch for dynamically injected Easy Apply modals
+// Watch for dynamically injected follow box
 const observer = new MutationObserver(mutations => {
   for (const mutation of mutations) {
     if ([...mutation.addedNodes].some(n => n.nodeType === 1 && n.querySelector?.('#follow-company-checkbox'))) {

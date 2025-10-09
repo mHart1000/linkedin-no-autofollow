@@ -10,8 +10,12 @@
       "run_at": "document_idle"
     }
   ],
-  "permissions": ["scripting", "activeTab"],
+  "permissions": ["storage", "scripting", "activeTab"],
   "icons": {
-    "48": "icon48.png"
+    "48": "checkbox48.png"
+  },
+  "action": {
+    "default_icon": "icons/checkbox48.png",
+    "default_popup": "popup.html"
   }
 }
