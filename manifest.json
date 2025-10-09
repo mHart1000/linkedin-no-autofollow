@@ -3,6 +3,8 @@
   "name": "LinkedIn No Auto-Follow",
   "version": "1.0",
   "description": "Automatically unchecks the 'Follow company' checkbox in LinkedIn Easy Apply forms.",
+  "author": "Matthew Hart",
+  "homepage_url": "https://github.com/mhart1000/linkedin-no-autofollow",
   "content_scripts": [
     {
       "matches": ["*://www.linkedin.com/*"],
@@ -10,8 +12,15 @@
       "run_at": "document_idle"
     }
   ],
-  "permissions": ["scripting", "activeTab"],
+  "permissions": ["storage"],
   "icons": {
-    "48": "icon48.png"
+    "16": "icons/checkbox16.png",
+    "32": "icons/checkbox32.png",
+    "48": "icons/checkbox48.png",
+    "96": "icons/checkbox96.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/checkbox48.png"
   }
 }
