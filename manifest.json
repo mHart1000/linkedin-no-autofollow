@@ -12,16 +12,13 @@
   ],
   "permissions": ["storage", "scripting", "activeTab"],
   "icons": {
-    "48": "icons/checkbox48.png"
+    "16": "icons/checkbox16.png",
+    "32": "icons/checkbox32.png",
+    "48": "icons/checkbox48.png",
+    "96": "icons/checkbox96.png"
   },
   "action": {
     "default_popup": "popup.html",
-    "theme_icons": [
-      {
-        "light": "icons/checkbox48light.png",
-        "dark": "icons/checkbox48.png",
-        "size": 48
-      }
-    ]
+    "default_icon": "icons/checkbox48.png"
   }
 }
