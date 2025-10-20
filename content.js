@@ -1,3 +1,5 @@
+if (typeof browser === 'undefined') var browser = chrome
+
 let enabled = true
 
 browser.storage.local.get('enabled').then(result => {
