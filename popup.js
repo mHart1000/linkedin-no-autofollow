@@ -1,3 +1,5 @@
+if (typeof browser === 'undefined') var browser = chrome
+
 const toggle = document.getElementById('linkedin-no-follow-plugin-toggle')
 
 browser.storage.local.get('enabled').then(result => {
