@@ -25,14 +25,8 @@ function uncheckFollowBox() {
 
 uncheckFollowBox()
 
-// Watch for dynamically injected follow box
-const observer = new MutationObserver(mutations => {
-  for (const mutation of mutations) {
-    if ([...mutation.addedNodes].some(n => n.nodeType === 1 && n.querySelector?.('#follow-company-checkbox'))) {
-      uncheckFollowBox()
-      break
-    }
-  }
+const observer = new MutationObserver(() => {
+  uncheckFollowBox()
 })
 
 observer.observe(document.body, { childList: true, subtree: true })
